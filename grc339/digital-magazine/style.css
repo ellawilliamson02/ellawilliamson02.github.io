@@ -1,3 +1,4 @@
+
 /*CSS document*/
 
 html, body, div, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit;}
@@ -7,7 +8,7 @@ img {
     display: block;
 }
 
-div.container {
+div.container, div.home-container {
     margin: auto;
     position: relative;
     max-width: 40em;
@@ -17,12 +18,22 @@ h1 {
     width: 6rem;
 }
 
-header {
-    padding: 1rem .5rem 0;
+h2{
+    font-weight: bold;
+    font-family: serif;
+}
+
+h3{
+    font-weight: bold;
+    font-family: serif;
 }
 
 a {
     text-decoration: none;
+}
+
+header {
+    padding: 1rem .5rem 0;
 }
 
 nav {
@@ -31,24 +42,8 @@ nav {
     font-weight: bold;
 }
 
-h2{
-    font-weight: bold;
-}
-
-li {
-    line-height: 1.4em;
-}
-
 ul li {
     list-style-type: none;
-}
-
-h2, li a {
-    color: rgb(85, 119, 153);
-}
-
-h2, p, figcaption {
-    margin: 0 .5rem;
 }
 
 section.main h2{
@@ -58,7 +53,7 @@ section.main h2{
 
 section.secondary h2 {
     padding-top: .5rem;
-    font-size: 1.5em;
+    font-size: 2em;
 }
 
 section.tertiary h2 {
@@ -67,29 +62,30 @@ section.tertiary h2 {
     font-size: 1em;
 }
 
-figcaption {
-    color: rgb(80, 80, 80);
-    font-style: italic;
-    font-family: sans-serif;
-    padding: .5rem 0 1.2rem;
-    font-weight: regular;
+h2, li a {
+    color: rgb(85, 119, 153);
+}
+
+li {
+    line-height: 1.4em;
 }
 
 p {
     color: rgb(34 34 34);
     font-family: sans-serif;
-    padding-bottom: 1em;
+    padding-bottom: 1.8rem;
     line-height: 1.2em;
-    font-size: 12pt;
 }
 
-main p {
-    margin: 0 0 1rem 0;
-    }
+figcaption {
+    font-style: italic;
+    font-family: sans-serif;
+    color: rgb(113, 113, 113);
+    padding: .5rem 0 1.2rem;
+}
 
-article h2 {
-    font-size: 2.5em;
-    padding: 1.5rem 0 .5rem 0;
+h2, p, figcaption {
+    margin: 0 .5rem;
 }
 
 aside {
@@ -101,10 +97,14 @@ aside h2 {
     padding-top: .3rem;
 }
 
-
+article h2 {
+    font-size: 2.5em;
+    padding: 1.5rem 0 .5rem 0;
+}
 
 footer {
     background-color: rgb(85, 119, 153);
+    box-sizing: border-box;
 }
 
 footer p {
@@ -113,27 +113,125 @@ footer p {
     padding-top: .75rem;
 }
 
-
-
 @media screen and (min-width: 40em) {
     nav ul li {
-    display: inline;
-    margin-right: 0.75rem;
+        display: inline;
+        margin-right: 0.75rem;
     }
 
-header {
-    padding: 1rem 0 0 0;
+    header {
+        padding: 1rem 0 0 0;
     }
 
-h2, p, figcaption {
-    margin: 0;
+    h2, p, figcaption {
+        margin: 0;
     }
 
-
-
-aside p {
-    margin: 0 0 0.7rem 0;
+    p {
+        padding-bottom: .8em;
     }
 
+    aside p {
+        margin: 0 0 0.7rem 0;
+    }
+
+    main p {
+        margin: 0 0 1rem 0;
+    }
+}
+
+@media only screen and (min-width: 60em){
+
+    div.home-container{
+        max-width: 80em;
+        padding: 0 1em;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-gap: 1em;
+    }
+
+    div.container{
+        max-width: 60em;
+        padding: 0 1em;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-gap: 1em;
+    }
+
+    header, footer{
+        grid-column: 1/3;
+    }
+
+    div.home-container main{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1em;
+    }
+
+    div.home-container aside {
+        background: none;
+        padding: 0;
+        margin-top: 0;
+    }
+
+    div.container aside {
+        margin-top: 0;
+    }
+
+    section.main{
+        grid-column: 2/4;
+        grid-row: 1/3;
+        display: flex;
+    }
+
+    section.main a{
+        flex: 1 0 12em;
+        display: flex;
+        flex-direction: column;
+    }  
+
+    section.main a figure{
+        flex: 1 0 12em;
+        display: flex;
+    }
+
+    section.main a figure img{
+        object-fit: cover;
+    }
+
+    section.main a h2{
+        flex: 0 0 1em;
+    }
+    
+    section.main a p{
+        flex: 0 0 4em;
+    }
+
+    section.secondary{
+        display: flex;
+    }
+
+    section.secondary a{
+        flex: 1 0 12em;
+        display: flex;
+        flex-direction: column;
+    }  
+
+    section.secondary a figure{
+        flex: 1 0 12em;
+        display: flex;
+    }
+
+    section.secondary a figure img{
+        object-fit: cover;
+    }
+
+    section.secondary a h2{
+        flex: 0 0 1em;
+    }
+    
+    section.secondary a p{
+        flex: 0 0 4em;
+    }
 
 }
