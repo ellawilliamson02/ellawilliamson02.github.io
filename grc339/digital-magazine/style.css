@@ -9,6 +9,78 @@ html, body, div, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
     font: inherit;
 }
 
+div.photogallery {
+    max-width: 60em;
+    grid-column: 1/3;
+    margin: 0 auto;
+    
+}
+
+div.newsletter {
+    margin: auto;
+    position: relative;
+    max-width: 50em;
+    font-weight: bold;
+    font-family: 'bilo', sans-serif; 
+    }
+    
+div.newsletter h3 {
+    font-family: Nove;
+    color: rgb(146, 173, 164);
+    padding-top: 1em;
+
+}
+
+div.newsletter img {
+    max-width: 60em;
+    padding-top: 2em;
+    
+}
+
+
+div.photogallery nav {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-gap: .23m;
+}
+
+/* div.photogallery input{
+    display: none;
+} */
+
+div.photogallery figure{
+    margin: 0;
+    width: calc (100%-2em);
+    position: absolute;
+    opacity: 0;
+    transition: left 0.5s, opacity 0.5s;
+}
+
+
+input:nth-of-type(1):checked ~ main figure:nth-of-type(1),
+input:nth-of-type(2):checked ~ main figure:nth-of-type(2),
+input:nth-of-type(3):checked ~ main figure:nth-of-type(3),
+input:nth-of-type(4):checked ~ main figure:nth-of-type(4),
+input:nth-of-type(5):checked ~ main figure:nth-of-type(5),
+input:nth-of-type(6):checked ~ main figure:nth-of-type(6),
+input:nth-of-type(7):checked ~ main figure:nth-of-type(7),
+input:nth-of-type(8):checked ~ main figure:nth-of-type(8)
+
+{
+    opacity: 1;
+}
+
+
+div.photogallery img {
+    width: 100%
+}
+
+div.main-photogallery img {
+position: relative;
+
+overflow: hidden;
+padding-bottom: calc (66% + 5em);
+}
 
 
 body {
@@ -96,7 +168,7 @@ p {
     font-style: normal;
     padding-bottom: 1.8rem;
     line-height: 1.2em;
-    font-size: 20px;
+    font-size: 1.2em;
 }
 
 figcaption {
@@ -144,6 +216,13 @@ footer p {
     nav ul li {
         display: inline;
         margin-right: 0.75rem;
+    }
+
+    main.main-photogallery {
+        position: relative;
+        overflow: hidden;
+        padding-bottom: calc(66% + 4em);
+    
     }
 
     header {
