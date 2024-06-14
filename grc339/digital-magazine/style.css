@@ -56,6 +56,9 @@ div.photogallery figure{
     transition: left 0.5s, opacity 0.5s;
 }
 
+div.photogallery input[type="radio"] {
+    display: none;
+}
 
 input:nth-of-type(1):checked ~ main figure:nth-of-type(1),
 input:nth-of-type(2):checked ~ main figure:nth-of-type(2),
@@ -77,6 +80,8 @@ div.photogallery img {
 
 div.main-photogallery img {
 position: relative;
+
+
 
 overflow: hidden;
 padding-bottom: calc (66% + 5em);
